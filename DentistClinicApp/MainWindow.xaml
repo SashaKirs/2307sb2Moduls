@@ -1,0 +1,24 @@
+﻿<Window x:Class="DentistClinicApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Учет заявок" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                <Button Name="BtnAdd" Content="Добавить заявку" Width="120" Margin="5" Click="BtnAdd_Click"/>
+                <Button Name="BtnEdit" Content="Редактировать" Width="120" Margin="5" Click="BtnEdit_Click"/>
+                <Button Name="BtnDelete" Content="Удалить" Width="120" Margin="5" Click="BtnDelete_Click"/>
+                <Button Name="BtnChangeStatus" Content="Изменить статус" Width="120" Margin="5" Click="BtnChangeStatus_Click"/>
+            </StackPanel>
+            <DataGrid Name="RequestsDataGrid" AutoGenerateColumns="False" Height="350" IsReadOnly="True" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Артикул" Binding="{Binding Articul}"/>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Description}"/>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Header="Дата регистрации" Binding="{Binding RegistrationDate, StringFormat=d}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
